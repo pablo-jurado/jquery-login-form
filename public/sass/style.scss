@@ -1,0 +1,25 @@
+$mainColor: #009688;
+
+header {
+  border: 1px solid black;
+  text-align: center;
+  color: $mainColor;
+  padding: 20px;
+
+  a {
+    text-decoration: none;
+    color: $mainColor;
+  }
+}
+
+.main-content {
+  border: 1px solid black;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+footer {
+  border: 1px solid black;
+  width: 100%;
+}
