@@ -1,3 +1,14 @@
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
 header {
   border: 1px solid black;
   text-align: center;
@@ -11,7 +22,8 @@ header {
   border: 1px solid black;
   max-width: 500px;
   margin: 0 auto;
-  padding: 20px; }
+  padding: 20px;
+  flex: 1; }
 
 footer {
   border: 1px solid black;
