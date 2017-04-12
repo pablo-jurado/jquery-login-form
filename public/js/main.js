@@ -1,19 +1,26 @@
 var $ = window.jQuery
 var btn = $('#loginBtn')
 var spinner = $('.spinner')
+var feedback = $('.feedback')
+var user = $('#userName')
 
 spinner.hide()
 
 function response (data) {
   spinner.hide()
   btn.attr('disabled', false)
+  window.location.assign('http://localhost:7979/index.html')
   console.log('done!', data)
 }
 
 function responseFail (err) {
   spinner.hide()
   btn.attr('disabled', false)
-  console.log('error :(', err)
+  if (err.status === 500) {
+    feedback.html('Sorry we are having some difficulties...<br>Please try again later')
+  } else if (err.status === 400) {
+    feedback.html('Check your username or password')
+  }
 }
 
 function waitingForResponse () {
@@ -33,9 +40,9 @@ function loginHandler (e) {
 
 btn.click(loginHandler)
 
-//
+// -----------------------
 // user names for testing
-//
+//  -----------------------
 console.log('testuser1 : ilovebananas')
 console.log('testadmin5 : always_name_your_functions')
 console.log('qauser3 : luv2manage5tate')

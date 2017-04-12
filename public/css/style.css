@@ -26,6 +26,11 @@ header {
   padding: 20px;
   flex: 1; }
 
+.feedback {
+  padding-top: 20px;
+  font-weight: 600;
+  color: red; }
+
 .spinner {
   position: absolute;
   top: 0;
