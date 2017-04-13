@@ -2,15 +2,11 @@ var $ = window.jQuery
 var btn = $('#loginBtn')
 var spinner = $('.spinner')
 var feedback = $('.feedback')
-var user = $('#userName')
 
 spinner.hide()
 
 function response (data) {
-  spinner.hide()
-  btn.attr('disabled', false)
   window.location.assign('http://localhost:7979/index.html')
-  console.log('done!', data)
 }
 
 function responseFail (err) {
@@ -39,6 +35,9 @@ function loginHandler (e) {
 }
 
 btn.click(loginHandler)
+
+// var user = $('#userName')
+// user.html('hahhhahsdhahd!')
 
 // -----------------------
 // user names for testing
