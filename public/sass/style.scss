@@ -1,4 +1,8 @@
-$mainColor: #009688;
+$mainColor: #225378;
+$mainDark: darken($mainColor, 10%);
+$secondColor: #1695A3;
+$backColor: #DCE1E5;
+$linkColor: #EB7F00;
 
 html {
   box-sizing: border-box;
@@ -11,23 +15,38 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  color: $mainColor;
+  background-color: $backColor;
+
+  a {
+    color: $linkColor;
+    text-decoration: none;
+  }
 }
 
 header {
-  border: 1px solid black;
   text-align: center;
-  color: $mainColor;
+  color: $backColor;
   padding: 20px;
+  background: $mainColor;
+  box-shadow: 0 0 30px $mainDark;
 
   a {
     text-decoration: none;
-    color: $mainColor;
+    color: $backColor;
   }
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: $secondColor;
+  color: white;
+  padding: 5px 10px;
 }
 
 .main-content {
   position: relative;
-  border: 1px solid black;
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -38,6 +57,15 @@ header {
   padding-top: 20px;
   font-weight: 600;
   color: red;
+}
+
+footer {
+  width: 100%;
+  background-color: $secondColor;
+
+  a {
+    color: $backColor;
+  }
 }
 
 .spinner {
@@ -85,9 +113,4 @@ header {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
-}
-
-footer {
-  border: 1px solid black;
-  width: 100%;
 }
