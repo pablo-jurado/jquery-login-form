@@ -57,12 +57,30 @@ button {
   margin: 0 auto;
   padding: 20px;
   flex: 1;
+
+  .input-row {
+    margin-top: 10px;
+    position: relative;
+    height: 24px;
+  }
+
+  input {
+    position: absolute;
+    right: 0;
+    top: -3px;
+    width: 75%;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 .feedback {
-  padding-top: 20px;
+  color: $linkColor;
   font-weight: 600;
-  color: red;
+  padding-top: 20px;
 }
 
 footer {
