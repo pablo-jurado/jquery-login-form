@@ -45,7 +45,8 @@ button {
 
 footer {
   width: 100%;
-  background-color: #1695A3; }
+  background-color: #1695A3;
+  box-shadow: 0 0 30px #106c76; }
   footer a {
     color: #DCE1E5; }
 

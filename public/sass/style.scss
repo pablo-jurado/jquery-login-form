@@ -1,8 +1,14 @@
+// color variables
 $mainColor: #225378;
 $mainDark: darken($mainColor, 10%);
 $secondColor: #1695A3;
 $backColor: #DCE1E5;
 $linkColor: #EB7F00;
+
+// Shadow
+@mixin box-shadow($color) {
+  box-shadow: 0 0 30px darken($color, 10%);
+}
 
 html {
   box-sizing: border-box;
@@ -29,7 +35,7 @@ header {
   color: $backColor;
   padding: 20px;
   background: $mainColor;
-  box-shadow: 0 0 30px $mainDark;
+  @include box-shadow($mainColor);
 
   a {
     text-decoration: none;
@@ -62,6 +68,7 @@ button {
 footer {
   width: 100%;
   background-color: $secondColor;
+  @include box-shadow($secondColor);
 
   a {
     color: $backColor;
