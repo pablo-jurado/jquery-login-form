@@ -24,7 +24,7 @@ header {
     text-decoration: none;
     color: #DCE1E5; }
 
-button {
+.primary-btn {
   border: none;
   border-radius: 5px;
   background-color: #1695A3;
@@ -37,18 +37,25 @@ button {
   margin: 0 auto;
   padding: 20px;
   flex: 1; }
-  .main-content .input-row {
-    margin-top: 10px;
-    position: relative;
-    height: 24px; }
   .main-content input {
+    background: white;
+    border: none;
+    border-radius: 5px;
     position: absolute;
     right: 0;
-    top: -3px;
-    width: 75%; }
+    top: -4px;
+    width: 75%;
+    padding: 5px; }
+  .main-content input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset; }
   .main-content button {
     width: 100%;
     margin: 10px 0; }
+
+.input-row {
+  margin-top: 15px;
+  position: relative;
+  height: 24px; }
 
 .feedback {
   color: #EB7F00;
