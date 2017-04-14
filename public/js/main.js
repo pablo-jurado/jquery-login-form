@@ -1,15 +1,19 @@
+// DOM elements
 var $ = window.jQuery
 var btn = $('#loginBtn')
 var spinner = $('.spinner')
 var feedback = $('.feedback')
 
-spinner.hide()
+// global variables
+var timer
+var apiCall
 
 function response (data) {
   window.location.assign('http://localhost:7979/index.html')
 }
 
 function responseFail (err) {
+  clearInterval(timer)
   spinner.hide()
   btn.attr('disabled', false)
   if (err.status === 500) {
@@ -24,6 +28,19 @@ function waitingForResponse () {
   spinner.show()
 }
 
+function timerCount () {
+  timer = setInterval(add1, 1000)
+  var num = 0
+  function add1 () {
+    console.log(num++)
+    if (num === 15) {
+      clearInterval(timer)
+      apiCall.abort()
+      feedback.html('Sorry we are having some difficulties...<br>Please try again later')
+    }
+  }
+}
+
 function loginHandler (e) {
   e.preventDefault()
   waitingForResponse()
@@ -31,13 +48,13 @@ function loginHandler (e) {
   var $pass = $('#passwordInput').val()
   var url = 'http://localhost:7979/api/login'
   var data = { username: $login, password: $pass }
-  $.post(url, data).done(response).fail(responseFail)
+  apiCall = $.post(url, data).done(response).fail(responseFail)
+  timerCount()
 }
 
-btn.click(loginHandler)
+spinner.hide()
 
-// var user = $('#userName')
-// user.html('hahhhahsdhahd!')
+btn.click(loginHandler)
 
 // -----------------------
 // user names for testing
