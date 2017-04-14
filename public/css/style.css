@@ -5,48 +5,51 @@ html {
   box-sizing: inherit; }
 
 body {
-  height: 100vh;
+  background-color: #DCE1E5;
+  color: #225378;
   display: flex;
   flex-direction: column;
-  color: #225378;
-  background-color: #DCE1E5; }
+  height: 100vh; }
   body a {
     color: #EB7F00;
     text-decoration: none; }
 
 header {
-  text-align: center;
+  box-shadow: 0 0 30px #173850;
+  background: #225378;
   color: #DCE1E5;
   padding: 20px;
-  background: #225378;
-  box-shadow: 0 0 30px #173850;
+  text-align: center;
   z-index: 10; }
   header a {
     text-decoration: none;
     color: #DCE1E5; }
 
 .primary-btn {
-  border: none;
-  border-radius: 5px;
   background-color: #1695A3;
+  border-radius: 5px;
+  border: none;
   color: white;
   padding: 5px 10px; }
 
 .main-content {
-  position: relative;
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
   margin: 0 auto;
+  max-width: 500px;
   padding: 20px;
-  flex: 1; }
+  position: relative; }
   .main-content input {
     background: white;
-    border: none;
     border-radius: 5px;
+    border: none;
+    padding: 5px;
     position: absolute;
     right: 0;
     top: -4px;
-    width: 75%;
-    padding: 5px; }
+    width: 75%; }
   .main-content input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset; }
   .main-content button {
@@ -54,9 +57,9 @@ header {
     margin: 10px 0; }
 
 .input-row {
+  height: 24px;
   margin-top: 15px;
-  position: relative;
-  height: 24px; }
+  position: relative; }
 
 .feedback {
   color: #EB7F00;
@@ -71,22 +74,26 @@ footer {
   footer a {
     color: #DCE1E5; }
 
-.spinner {
+.spinner-wrapper {
+  background-color: rgba(220, 225, 229, 0.75);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  background-color: rgba(220, 225, 229, 0.75);
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding-top: 40%; }
+  width: 100%; }
+
+.spinner {
+  text-align: center; }
 
 .spinner > div {
-  width: 18px;
-  height: 18px;
-  background-color: #333;
+  background-color: #EB7F00;
   border-radius: 100%;
   display: inline-block;
+  height: 18px;
+  width: 18px;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
   animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
 

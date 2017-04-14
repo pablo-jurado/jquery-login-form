@@ -1,7 +1,7 @@
 // DOM elements
 var $ = window.jQuery
 var btn = $('#loginBtn')
-var spinner = $('.spinner')
+var spinner = $('.spinner-wrapper')
 var feedback = $('.feedback')
 
 // global variables
