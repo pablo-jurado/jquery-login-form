@@ -9,7 +9,7 @@ var timer
 var apiCall
 
 function response (data) {
-  window.location.assign('http://localhost:7979/index.html')
+  window.location.assign('http://127.0.0.1:7979/index.html')
 }
 
 function responseFail (err) {
@@ -46,7 +46,7 @@ function loginHandler (e) {
   waitingForResponse()
   var $login = $('#loginInput').val()
   var $pass = $('#passwordInput').val()
-  var url = 'http://localhost:7979/api/login'
+  var url = 'http://127.0.0.1:7979/api/login'
   var data = { username: $login, password: $pass }
   apiCall = $.post(url, data).done(response).fail(responseFail)
   timerCount()

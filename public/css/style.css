@@ -129,7 +129,11 @@ footer {
     transform: scale(1); } }
 @media only screen and (max-width: 414px) {
   body {
-    font-size: 0.85em; } }
+    font-size: 0.85em; }
+
+  .help-center a {
+    display: block;
+    padding-bottom: 5px; } }
 @media only screen and (max-height: 414px) and (orientation: landscape) {
   .main-content {
     display: block; } }

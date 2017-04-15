@@ -179,6 +179,12 @@ footer {
   body {
     font-size: .85em
   }
+  .help-center {
+    a {
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
 }
 
 // landscape phone layout
