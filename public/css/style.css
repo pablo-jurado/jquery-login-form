@@ -4,15 +4,16 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-body {
+.app {
   background-color: #DCE1E5;
   color: #225378;
   display: flex;
   flex-direction: column;
   height: 100vh; }
-  body a {
-    color: #EB7F00;
-    text-decoration: none; }
+
+a {
+  color: #EB7F00;
+  text-decoration: none; }
 
 header {
   box-shadow: 0 0 30px #173850;
@@ -25,12 +26,13 @@ header {
     text-decoration: none;
     color: #DCE1E5; }
 
-.primary-btn {
+.primary-btn, button {
   background-color: #1695A3;
   border-radius: 5px;
   border: none;
   color: white;
-  padding: 5px 10px; }
+  padding: 5px 10px;
+  cursor: pointer; }
 
 .main-content {
   display: flex;
@@ -39,7 +41,7 @@ header {
   justify-content: center;
   margin: 0 auto;
   max-width: 500px;
-  padding: 20px;
+  padding: 1rem;
   position: relative; }
 
 .login-form {
@@ -83,6 +85,46 @@ footer {
   z-index: 10; }
   footer a {
     color: #DCE1E5; }
+
+.modal {
+  background-color: rgba(34, 83, 120, 0.75);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.5);
+  padding: 5px; }
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 15px;
+  max-width: 500px;
+  max-height: 600px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  box-shadow: 0 0 30px #173850; }
+  .modal-content button {
+    float: right; }
+
+.modal-open .modal {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto; }
+
+.modal-open .app {
+  -webkit-filter: blur(5px);
+  -webkit-transform: scale(0.9); }
+
+.app, .modal {
+  transition: all 0.25s ease; }
 
 .spinner-wrapper {
   background-color: rgba(220, 225, 229, 0.75);
@@ -128,7 +170,7 @@ footer {
     -webkit-transform: scale(1);
     transform: scale(1); } }
 @media only screen and (max-width: 414px) {
-  body {
+  .app {
     font-size: 0.85em; }
 
   .help-center a {

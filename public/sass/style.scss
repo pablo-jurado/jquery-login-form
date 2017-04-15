@@ -21,17 +21,17 @@ html {
   box-sizing: inherit;
 }
 
-body {
+.app {
   background-color: $backColor;
   color: $mainColor;
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
 
-  a {
-    color: $linkColor;
-    text-decoration: none;
-  }
+a {
+  color: $linkColor;
+  text-decoration: none;
 }
 
 header {
@@ -48,12 +48,13 @@ header {
   }
 }
 
-.primary-btn {
+.primary-btn, button {
   background-color: $secondColor;
   border-radius: 5px;
   border: none;
   color: white;
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .main-content {
@@ -63,7 +64,7 @@ header {
   justify-content: center;
   margin: 0 auto;
   max-width: 500px;
-  padding: 20px;
+  padding: $mainPadding;
   position: relative;
 }
 
@@ -123,6 +124,53 @@ footer {
   }
 }
 
+.modal {
+  background-color: fade-out($mainColor, .25);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.5);
+  padding: 5px;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: $mainPadding;
+  margin-bottom: 15px;
+  max-width: 500px;
+  max-height: 600px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  @include box-shadow($mainColor);
+
+  button {
+    float: right;
+  }
+}
+
+.modal-open .modal {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-open .app {
+  -webkit-filter: blur(5px);
+  -webkit-transform: scale(0.9);
+}
+
+.app, .modal {
+  transition: all 0.25s ease;
+}
+
 .spinner-wrapper {
   background-color: fade-out($backColor, .25);
   display: flex;
@@ -176,7 +224,7 @@ footer {
 
 // regular phone layout
 @media only screen and (max-width: 414px) {
-  body {
+  .app {
     font-size: .85em
   }
   .help-center {

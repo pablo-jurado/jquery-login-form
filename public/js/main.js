@@ -1,9 +1,8 @@
 // DOM elements
 var $ = window.jQuery
-var btn = $('#loginBtn')
 var spinner = $('.spinner-wrapper')
 var feedback = $('.feedback')
-
+var btnLogin = $('#loginBtn')
 // global variables
 var timer
 var apiCall
@@ -15,16 +14,16 @@ function response (data) {
 function responseFail (err) {
   clearInterval(timer)
   spinner.hide()
-  btn.attr('disabled', false)
+  btnLogin.attr('disabled', false)
   if (err.status === 500) {
     feedback.html('Sorry we are having some difficulties...<br>Please try again later')
   } else if (err.status === 400) {
-    feedback.html('Check your username or password')
+    feedback.html('Check your username and password')
   }
 }
 
 function waitingForResponse () {
-  btn.attr('disabled', true)
+  btnLogin.attr('disabled', true)
   spinner.show()
 }
 
@@ -43,18 +42,35 @@ function timerCount () {
 
 function loginHandler (e) {
   e.preventDefault()
-  waitingForResponse()
   var $login = $('#loginInput').val()
   var $pass = $('#passwordInput').val()
-  var url = 'http://127.0.0.1:7979/api/login'
-  var data = { username: $login, password: $pass }
-  apiCall = $.post(url, data).done(response).fail(responseFail)
-  timerCount()
+  if ($login !== '' && $pass !== '') {
+    waitingForResponse()
+    var url = 'http://127.0.0.1:7979/api/login'
+    var data = { username: $login, password: $pass }
+    apiCall = $.post(url, data).done(response).fail(responseFail)
+    timerCount()
+  }
+  feedback.html('Please enter username and password')
+}
+
+function toggleModal () {
+  $('body').toggleClass('modal-open')
+}
+
+function closeModal (e) {
+  if (e.target.id === 'modalBack') {
+    $('body').toggleClass('modal-open')
+  }
 }
 
 spinner.hide()
 
-btn.click(loginHandler)
+btnLogin.click(loginHandler)
+
+$('#helpBtn').click(toggleModal)
+$('.modal button').click(toggleModal)
+$('#modalBack').click(closeModal)
 
 // -----------------------
 // user names for testing
