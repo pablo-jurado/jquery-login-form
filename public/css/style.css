@@ -18,7 +18,7 @@ header {
   box-shadow: 0 0 30px #173850;
   background: #225378;
   color: #DCE1E5;
-  padding: 20px;
+  padding: 1rem;
   text-align: center;
   z-index: 10; }
   header a {
@@ -44,10 +44,13 @@ header {
 
 .login-form {
   background-color: white;
-  padding: 20px;
+  padding: 1rem;
   box-shadow: 0 0 30px #bfc8cf;
   border-radius: 10px;
   margin-bottom: 15px; }
+  .login-form h1 {
+    margin-top: 0;
+    margin-bottom: 2rem; }
   .login-form input {
     background: white;
     border-radius: 5px;
@@ -61,17 +64,17 @@ header {
     -webkit-box-shadow: 0 0 0px 1000px white inset; }
   .login-form button {
     width: 100%;
-    margin-top: 20px; }
+    margin-top: 1rem; }
 
 .input-row {
   height: 24px;
-  margin-top: 20px;
+  margin-top: 1rem;
   position: relative; }
 
 .feedback {
   color: #EB7F00;
   font-weight: 600;
-  padding-top: 20px; }
+  padding-top: 1rem; }
 
 footer {
   width: 100%;
@@ -124,5 +127,11 @@ footer {
   40% {
     -webkit-transform: scale(1);
     transform: scale(1); } }
+@media only screen and (max-width: 414px) {
+  body {
+    font-size: 0.85em; } }
+@media only screen and (max-height: 414px) and (orientation: landscape) {
+  .main-content {
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */
