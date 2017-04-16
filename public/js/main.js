@@ -54,8 +54,9 @@ function loginHandler (e) {
     var data = { username: $login, password: $pass }
     apiCall = $.post(url, data).done(response).fail(responseFail)
     timerCount()
+  } else {
+    feedback.html('Please enter username and password')
   }
-  feedback.html('Please enter username and password')
 }
 
 function toggleModal () {
