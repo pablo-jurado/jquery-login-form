@@ -26,7 +26,7 @@ header {
     text-decoration: none;
     color: #DCE1E5; }
 
-.primary-btn, button {
+.primary-btn {
   background-color: #1695A3;
   border-radius: 5px;
   border: none;
@@ -105,14 +105,25 @@ footer {
   background-color: white;
   border-radius: 10px;
   padding: 1rem;
+  position: relative;
   margin-bottom: 15px;
   max-width: 500px;
   max-height: 600px;
-  overflow-y: scroll;
   margin: 0 auto;
   box-shadow: 0 0 30px #173850; }
-  .modal-content button {
-    float: right; }
+
+.x-btn {
+  position: absolute;
+  right: 15px; }
+
+.close-btn {
+  display: block;
+  margin: 0 auto; }
+
+.modal-body {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  overflow-y: scroll; }
 
 .modal-open .modal {
   transform: scale(1);

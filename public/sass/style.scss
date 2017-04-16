@@ -48,7 +48,7 @@ header {
   }
 }
 
-.primary-btn, button {
+.primary-btn {
   background-color: $secondColor;
   border-radius: 5px;
   border: none;
@@ -144,16 +144,27 @@ footer {
   background-color: white;
   border-radius: 10px;
   padding: $mainPadding;
+  position: relative;
   margin-bottom: 15px;
   max-width: 500px;
   max-height: 600px;
-  overflow-y: scroll;
   margin: 0 auto;
   @include box-shadow($mainColor);
+}
 
-  button {
-    float: right;
-  }
+.x-btn {
+  position: absolute;
+  right: 15px;
+}
+.close-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-body {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  overflow-y: scroll;
 }
 
 .modal-open .modal {
