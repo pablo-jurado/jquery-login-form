@@ -123,6 +123,7 @@ footer {
 .modal-body {
   margin-top: 30px;
   margin-bottom: 20px;
+  max-height: 550px;
   overflow-y: scroll; }
 
 .modal-open .modal {
@@ -186,7 +187,12 @@ footer {
 
   .help-center a {
     display: block;
-    padding-bottom: 5px; } }
+    padding-bottom: 5px; }
+
+  .modal-body {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    max-height: 400px; } }
 @media only screen and (max-height: 414px) and (orientation: landscape) {
   .main-content {
     display: block; } }

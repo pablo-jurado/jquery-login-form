@@ -1,3 +1,6 @@
+// load mardown library
+// var marked = require('marked')
+
 // DOM elements
 var $ = window.jQuery
 var spinner = $('.spinner-wrapper')
@@ -79,7 +82,7 @@ function getHelpFile () {
     url: 'http://127.0.0.1:7979/md/' + fileName,
     dataType: 'text',
     success: function (data) {
-      $('.modal-body').html(data)
+      $('.modal-body').html(marked(data))
     }
   })
 }

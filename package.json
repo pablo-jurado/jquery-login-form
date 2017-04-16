@@ -9,5 +9,8 @@
   "devDependencies": {
     "express": "4.12.3",
     "body-parser": "1.17.1"
+  },
+  "dependencies": {
+    "marked": "^0.3.6"
   }
 }

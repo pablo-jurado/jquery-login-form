@@ -164,6 +164,7 @@ footer {
 .modal-body {
   margin-top: 30px;
   margin-bottom: 20px;
+  max-height: 550px;
   overflow-y: scroll;
 }
 
@@ -243,6 +244,11 @@ footer {
       display: block;
       padding-bottom: 5px;
     }
+  }
+  .modal-body {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    max-height: 400px;
   }
 }
 
