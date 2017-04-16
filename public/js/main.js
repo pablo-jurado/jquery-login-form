@@ -1,6 +1,3 @@
-// load mardown library
-// var marked = require('marked')
-
 // DOM elements
 var $ = window.jQuery
 var spinner = $('.spinner-wrapper')

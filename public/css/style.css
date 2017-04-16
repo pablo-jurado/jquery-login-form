@@ -15,6 +15,20 @@ a {
   color: #EB7F00;
   text-decoration: none; }
 
+a:hover {
+  text-decoration: underline; }
+
+.primary-btn, button {
+  background-color: #1695A3;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer; }
+
+button:hover {
+  background-color: rgba(22, 149, 163, 0.75); }
+
 header {
   box-shadow: 0 0 30px #173850;
   background: #225378;
@@ -25,14 +39,6 @@ header {
   header a {
     text-decoration: none;
     color: #DCE1E5; }
-
-.primary-btn {
-  background-color: #1695A3;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  cursor: pointer; }
 
 .main-content {
   display: flex;

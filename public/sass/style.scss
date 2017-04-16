@@ -34,6 +34,23 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+.primary-btn, button {
+  background-color: $secondColor;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: fade-out($secondColor, .25);
+}
+
 header {
   @include box-shadow($mainColor);
   background: $mainColor;
@@ -46,15 +63,6 @@ header {
     text-decoration: none;
     color: $backColor;
   }
-}
-
-.primary-btn {
-  background-color: $secondColor;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  cursor: pointer;
 }
 
 .main-content {
