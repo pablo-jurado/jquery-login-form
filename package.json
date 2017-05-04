@@ -8,9 +8,15 @@
   },
   "devDependencies": {
     "express": "4.12.3",
-    "body-parser": "1.17.1"
+    "body-parser": "1.17.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0"
   },
   "dependencies": {
-    "marked": "^0.3.6"
+    "marked": "^0.3.6",
+    "grunt": "^1.0.1",
+    "uglifyjs": "~2.4.10"
   }
 }
