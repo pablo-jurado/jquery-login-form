@@ -408,6 +408,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+body {
+  position: relative; }
+
 .app {
   background-color: #DCE1E5;
   color: #225378;
@@ -496,30 +499,34 @@ footer {
   footer a {
     color: #DCE1E5; }
 
-.modal {
+.modal-back {
   background-color: rgba(34, 83, 120, 0.75);
   height: 100vh;
   width: 100vw;
   position: fixed;
   left: 0;
   top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   opacity: 0;
   pointer-events: none;
   transform: scale(1.5);
-  padding: 5px; }
+  padding: 5px;
+  z-index: 100; }
 
-.modal-content {
+.modal {
   background-color: white;
   border-radius: 10px;
   padding: 1rem;
-  position: relative;
   margin-bottom: 15px;
   max-width: 500px;
   max-height: 600px;
-  margin: 0 auto;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  transform: scale(1.25);
+  opacity: 0;
+  z-index: 200;
   box-shadow: 0 0 30px #173850; }
 
 .x-btn {
@@ -533,8 +540,12 @@ footer {
 .modal-body {
   margin-top: 30px;
   margin-bottom: 20px;
-  max-height: 550px;
-  overflow-y: scroll; }
+  max-height: 550px; }
+
+.modal-open .modal-back {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto; }
 
 .modal-open .modal {
   transform: scale(1);
@@ -545,7 +556,7 @@ footer {
   -webkit-filter: blur(5px);
   -webkit-transform: scale(0.9); }
 
-.app, .modal {
+.app, .modal-back, .modal {
   transition: all 0.25s ease; }
 
 .spinner-wrapper {

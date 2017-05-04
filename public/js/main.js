@@ -61,9 +61,9 @@
 
   btnLogin.click(loginHandler)
 
-  // -----------------------
-  // user names for testing
-  //  -----------------------
+  // ---------------------------------------------------------------------------
+  //  user names for testing
+  // ---------------------------------------------------------------------------
   console.log('testuser1 : ilovebananas')
   console.log('testadmin5 : always_name_your_functions')
   console.log('qauser3 : luv2manage5tate')
@@ -76,12 +76,6 @@
       getHelpFile()
     }
     $('body').toggleClass('modal-open')
-  }
-
-  function closeModal (e) {
-    if (e.target.id === 'modalBack') {
-      $('body').toggleClass('modal-open')
-    }
   }
 
   function randomNum () {
@@ -100,7 +94,5 @@
     })
   }
 
-  $('#helpBtn').click(toggleModal)
-  $('.modal button').click(toggleModal)
-  $('#modalBack').click(closeModal)
+  $('#helpBtn, #modalBack, .modal button').click(toggleModal)
 })()

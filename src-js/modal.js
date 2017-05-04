@@ -7,12 +7,6 @@
     $('body').toggleClass('modal-open')
   }
 
-  function closeModal (e) {
-    if (e.target.id === 'modalBack') {
-      $('body').toggleClass('modal-open')
-    }
-  }
-
   function randomNum () {
     return Math.floor(Math.random() * 4 + 1)
   }
@@ -29,7 +23,5 @@
     })
   }
 
-  $('#helpBtn').click(toggleModal)
-  $('.modal button').click(toggleModal)
-  $('#modalBack').click(closeModal)
+  $('#helpBtn, #modalBack, .modal button').click(toggleModal)
 })()

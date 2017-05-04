@@ -61,9 +61,9 @@
 
   btnLogin.click(loginHandler)
 
-  // -----------------------
-  // user names for testing
-  //  -----------------------
+  // ---------------------------------------------------------------------------
+  //  user names for testing
+  // ---------------------------------------------------------------------------
   console.log('testuser1 : ilovebananas')
   console.log('testadmin5 : always_name_your_functions')
   console.log('qauser3 : luv2manage5tate')
