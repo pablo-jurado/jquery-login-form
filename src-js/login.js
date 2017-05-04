@@ -4,19 +4,15 @@
   var feedback = $('.feedback')
   var btnLogin = $('#loginBtn')
 
-  // global variables
-  var timer
-  var apiCall
-
   function response (data) {
     window.location.assign('http://127.0.0.1:7979/index.html')
   }
 
-  function responseFail (err) {
-    clearInterval(timer)
+  function responseFail (err, textStatus) {
     spinner.hide()
     btnLogin.attr('disabled', false)
-    if (err.status === 500) {
+    console.info(textStatus)
+    if (err.status === 500 || err.status === 0) {
       feedback.html('Sorry we are having some difficulties...<br>Please try again later')
     } else if (err.status === 400) {
       feedback.html('Check your username and password')
@@ -28,30 +24,24 @@
     spinner.show()
   }
 
-  function timerCount () {
-    timer = setInterval(add1, 1000)
-    var num = 0
-    function add1 () {
-      num++
-      console.info('timer: ' + num + ' sec.')
-      if (num === 15) {
-        clearInterval(timer)
-        apiCall.abort()
-        feedback.html('Sorry we are having some difficulties...<br>Please try again later')
-      }
-    }
-  }
-
   function loginHandler (e) {
     e.preventDefault()
     var $login = $('#loginInput').val()
     var $pass = $('#passwordInput').val()
+
     if ($login !== '' && $pass !== '') {
       waitingForResponse()
-      var url = 'http://127.0.0.1:7979/api/login'
-      var data = { username: $login, password: $pass }
-      apiCall = $.post(url, data).done(response).fail(responseFail)
-      timerCount()
+      var indexUrl = 'http://127.0.0.1:7979/api/login'
+      var userInfo = { username: $login, password: $pass }
+
+      $.ajax({
+        type: 'POST',
+        url: indexUrl,
+        data: userInfo,
+        success: response,
+        timeout: 15000,
+        error: responseFail
+      })
     } else {
       feedback.html('Please enter username and password')
     }

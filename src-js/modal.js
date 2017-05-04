@@ -7,12 +7,12 @@
     $('body').toggleClass('modal-open')
   }
 
-  function randomNum () {
-    return Math.floor(Math.random() * 4 + 1)
+  function randomNumBetween (min, max) {
+    return Math.floor(Math.random() * max + min)
   }
 
   function getHelpFile () {
-    var fileName = 'login-help-' + randomNum() + '.md'
+    var fileName = 'login-help-' + randomNumBetween(1, 4) + '.md'
     console.info('open file:', fileName)
     $.ajax({
       url: 'http://127.0.0.1:7979/md/' + fileName,
